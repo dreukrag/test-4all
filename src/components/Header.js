@@ -35,8 +35,8 @@ export default class Header extends React.Component{
         <Button onClick={this.drawerHandleToggle} color='secondary' style={headerText}>DashBoard</Button>
         <section style={flexBox} >
             <Hidden xsDown>
-                <IconButton children={<CustomizedBadge color='secondary' badgeContent={1}><Notifications /></CustomizedBadge>} />
-                <IconButton children={<CustomizedBadge color='secondary' badgeContent={3}><ChatBubbleOutline /></CustomizedBadge>} />
+                <IconButton children={<CustomizedBadge color='error' badgeContent={1}><Notifications color='secondary' /></CustomizedBadge>} />
+                <IconButton children={<CustomizedBadge color='error' badgeContent={3}><ChatBubbleOutline color='secondary' /></CustomizedBadge>} />
                 <IconButton children={<Settings color='secondary'/>}/>
                 <IconButton children={<Search color='secondary'/>} />
             </Hidden>
