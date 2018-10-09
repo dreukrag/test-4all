@@ -1,14 +1,20 @@
 import React from 'react';
-import {Card, CardContent, CardHeader} from '@material-ui/core/';
+import {Card, CardHeader} from '@material-ui/core/';
 
 export default class BaseCard extends React.Component
 {
 
     render= () => (
-        <Card {...this.props}>
-            {this.props.title}
+        <Card >
+            {this.props.titleContent ?<CardHeader title={this.props.titleContent} /> :null}
             {this.props.children}
         </Card>
     )
 
+}
+
+BaseCard.defaultProps = {
+    classes:{
+        headerClasses:null
+    }
 }
