@@ -66,7 +66,6 @@ export default class ChartCard extends React.Component{
         axios.get('http://dev.4all.com:3050/pageViews').then(response => {
             var views = [];
             var month = [];
-            console.log(response.data)
             response.data.forEach(function(el) {
                 month.push(el.month)
             }, this);
