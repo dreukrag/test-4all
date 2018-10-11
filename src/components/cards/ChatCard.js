@@ -1,20 +1,46 @@
 import React from 'react'
+import axios from 'axios'
 import {Avatar, Grid, Card, CardHeader, Typography} from '@material-ui/core/';
+import ChatWidget from './ChatWidget'
+import ChatWidgetClient from './ChatWidgetClient'
 
 import { ChatBubbleOutline } from '@material-ui/icons/';
 
 export default class ChatCard extends React.Component{
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          messageData: [{
+            userName:'JohnDoe',
+            portrait:'',
+            message:'Lorem Ipsum',
+            displayPortraitLeft:true,
+            time:'0 seconds',
+          }],
+        };
+    }
+
     render = () => (
         <Card>
             <CardHeader title={<span style={{float:'left'}}><ChatBubbleOutline /> <span>Chat</span></span>
             }/>
-                <Card>
-                    <Avatar style={{float:'left', margin:'8px'}} children='A' alt='avatar'/>
-                    <Typography variant='body1' align='justify' children={
-                        'Mollit amet ipsum eu ullamco minim id. Ullamco sit qui Lorem nostrud. Amet et proident laborum non non deserunt ea non elit enim officia velit. Labore veniam enim veniam tempor. Velit exercitation duis ea non consectetur elit adipisicing elit consectetur laboris pariatur.'
-                    }/>
-                    
-                </Card>
+                {this.state.messageData.map( x => {
+                    return <ChatWidget {...x} />
+                })}
+                <ChatWidgetClient updateFunc={this.updateChat} />
         </Card>
     )
+    updateChat = () => {
+        this.getMessageData()
+    }
+    getMessageData = () =>{
+        axios.get('http://dev.4all.com:3050/messages').then(response => {
+            this.setState({messageData:response.data})
+        });
+    }
+    
+    componentDidMount = () => {
+        this.getMessageData();
+    };
 }
