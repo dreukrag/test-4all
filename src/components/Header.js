@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import {Drawer, MenuItem, Menu, ListItem, List, ListItemText, ListItemIcon, 
     AppBar, Toolbar, Button, IconButton, Badge, Hidden} from '@material-ui/core'
-import {Dashboard, Notifications, ChatBubbleOutline, Settings, Search, MoreVert, AddCircleOutline, Email, Person, CalendarToday} from '@material-ui/icons';
+import {Dashboard, Notifications, ChatBubbleOutline, Settings, Search, MoreVert, AddCircleOutline, Person, CalendarToday} from '@material-ui/icons';
 
 const flexBox = {
     width:'100%',
@@ -63,10 +63,11 @@ export default class Header extends React.Component{
             onClose={this.drawerHandleClose}
             >
             <List>
-                <ListItem divider>Lista de Trabalho</ListItem>
+                <ListItem divider>Área de Trabalho</ListItem>
                 <List>
-                    <ListItem onClick={this.drawerHandleClose}>Calendário</ListItem>
-                    <ListItem onClick={this.drawerHandleClose}>Atividades</ListItem>
+                    <ListItem onClick={this.drawerHandleClose}>Sites</ListItem>
+                    <ListItem onClick={this.drawerHandleClose}>Histórico</ListItem>
+                    <ListItem onClick={this.drawerHandleClose}>Configurações</ListItem>
                 </List>
             </List>
             <List>
@@ -82,10 +83,7 @@ export default class Header extends React.Component{
                 <List>
                     <ListItem onClick={this.drawerHandleClose}>
                         <ListItemIcon children={<CalendarToday />} />
-                        <ListItemText children={'Tarefas'}/></ListItem>
-                    <ListItem onClick={this.drawerHandleClose}>
-                        <ListItemIcon children={<Email />} />
-                        <ListItemText children={'Email'}/></ListItem>
+                        <ListItemText children={'Watchpoint'}/></ListItem>
                     <ListItem onClick={this.drawerHandleClose}>
                         <ListItemIcon children={<Person />} />
                         <ListItemText children={'Contato'}/></ListItem>
