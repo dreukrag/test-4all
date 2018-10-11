@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {Avatar, Grid, Card, CardHeader, Typography} from '@material-ui/core/';
+import { Card, CardHeader } from '@material-ui/core/';
 import ChatWidget from './ChatWidget'
 import ChatWidgetClient from './ChatWidgetClient'
 

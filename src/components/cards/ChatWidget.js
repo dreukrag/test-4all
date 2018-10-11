@@ -1,5 +1,5 @@
 import React from 'react'
-import {Paper, Card, Avatar, Typography} from '@material-ui/core/';
+import {Paper, Avatar, Typography} from '@material-ui/core/';
 
 export default class ChatWidget extends React.Component {
     render = () => (

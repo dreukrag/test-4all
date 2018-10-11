@@ -1,6 +1,6 @@
 import React from 'react';
 import {InsertChart, ExpandMore} from '@material-ui/icons/';
-import { Menu, Popover, Button} from '@material-ui/core/';
+import { Menu, Button} from '@material-ui/core/';
 
 export default class ButtonMenu extends React.Component {
 
